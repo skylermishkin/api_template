@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+
+  app_api:
+    build: .
+    image: template_app
+    entrypoint: bash /app/start.sh
+    volumes:
+      - /tmp/.template_app/logs:/app/logs
+    ports:
+      - 8000:5000
+    networks:
+      - internal
+    #deploy:
+      #restart_policy:
+        #condition: on-failure
+
+networks:
+  internal:
