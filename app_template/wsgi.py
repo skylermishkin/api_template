@@ -1,8 +1,8 @@
 from app_template.app import create_app, logger
 
 
-def start(env, start_response):
+def start():
     logger.info("WSGI is starting up.")
     app = create_app()
-    logger.info("Application created.")
+    logger.info(f"Application created: {app}")
     return app

@@ -6,6 +6,8 @@ from flask import Flask
 from app_template import APP_DIR, SERVICE_NAME
 from app_template.views import base_blueprint
 
+# import app_template.views
+
 # Setup a nice lil logger
 log_dir = f"{APP_DIR}/logs"
 try:
@@ -22,13 +24,7 @@ logger.setLevel("INFO")
 logger.addHandler(log_handler)
 
 
-def create_app():
+def create_app() -> Flask:
     app = Flask(__name__)
-    app = register_context(app)
-    return app
-
-
-def register_context(app):
-    logger.info("Registering app context.")
-    app = app.register_blueprint(base_blueprint)
+    app.register_blueprint(base_blueprint)
     return app
