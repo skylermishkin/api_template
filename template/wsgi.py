@@ -1,4 +1,4 @@
-from app_template.app import create_app, logger
+from template.app import create_app, logger
 
 
 def start():

@@ -1,5 +1,4 @@
 #!/bin/bash
 
-gunicorn \
+gunicorn template.wsgi:start\(\) \
     -b 0.0.0.0:5000 \
-    app_template.wsgi:start\(\)

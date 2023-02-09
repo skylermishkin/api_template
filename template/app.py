@@ -3,10 +3,8 @@ from os import mkdir
 
 from flask import Flask
 
-from app_template import APP_DIR, SERVICE_NAME
-from app_template.views import base_blueprint
-
-# import app_template.views
+from template import APP_DIR, SERVICE_NAME
+from template.views import base_blueprint
 
 # Setup a nice lil logger
 log_dir = f"{APP_DIR}/logs"
